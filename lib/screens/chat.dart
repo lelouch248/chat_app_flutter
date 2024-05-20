@@ -12,17 +12,17 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
-  void setupPushNotification() async {
-    final fcm = FirebaseMessaging.instance;
-    await fcm.requestPermission();
-    fcm.subscribeToTopic('chat'); 
-  }
+  // void setupPushNotification() async {
+  //   final fcm = FirebaseMessaging.instance;
+  //   await fcm.requestPermission();
+  //   fcm.subscribeToTopic('chat');
+  // }
 
-  @override
-  void initState() {
-    super.initState();
-    setupPushNotification();
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   setupPushNotification();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,7 @@ class _ChatScreenState extends State<ChatScreen> {
           ],
         ),
         body: Column(
-          children: [Expanded(child: ChatMessages()), NewMessage()],
+          children: const [Expanded(child: ChatMessages()), NewMessage()],
         ));
   }
 }
